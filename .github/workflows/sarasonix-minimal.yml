@@ -165,14 +165,14 @@ jobs:
             sarasonix-downloads-
 
       - name: Generate SaraSonix Dockerfile
-        run: ./generate.sh win64 sarasonix-win64-lgpl-shared-8.1
+        run: ./generate.sh win64 lgpl-sarasonix-shared-8.1
 
       - name: Image name
         id: image
         shell: bash
         run: |
           REPO="${GITHUB_REPOSITORY,,}"
-          echo "name=ghcr.io/${REPO}/win64-sarasonix-win64-lgpl-shared-8.1" >> "$GITHUB_OUTPUT"
+          echo "name=ghcr.io/${REPO}/win64-lgpl-sarasonix-shared-8.1" >> "$GITHUB_OUTPUT"
 
       - name: Build target image
         uses: docker/build-push-action@v7
@@ -205,7 +205,7 @@ jobs:
           password: ${{ github.token }}
 
       - name: Build FFmpeg
-        run: ./build.sh win64 sarasonix-win64-lgpl-shared-8.1
+        run: ./build.sh win64 lgpl-sarasonix-shared-8.1
 
       - name: Upload SaraSonix FFmpeg
         uses: actions/upload-artifact@v7
