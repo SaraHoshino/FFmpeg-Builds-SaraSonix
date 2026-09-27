@@ -172,7 +172,7 @@ jobs:
         shell: bash
         run: |
           REPO="${GITHUB_REPOSITORY,,}"
-          echo "name=ghcr.io/${REPO}/win64-sarasonix" >> "$GITHUB_OUTPUT"
+          echo "name=ghcr.io/${REPO}/win64-sarasonix-win64-lgpl-shared-8.1" >> "$GITHUB_OUTPUT"
 
       - name: Build target image
         uses: docker/build-push-action@v7
