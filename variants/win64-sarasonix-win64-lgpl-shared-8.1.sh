@@ -38,3 +38,4 @@ FF_CONFIGURE+=" --enable-encoder=h264_nvenc,h264_amf,h264_qsv,libopenh264"
 
 # Keep GPL/nonfree codecs out of this build.
 FF_CONFIGURE+=" --disable-libx264 --disable-libx265 --disable-nonfree"
+FF_CONFIGURE+=" --disable-avisynth"
