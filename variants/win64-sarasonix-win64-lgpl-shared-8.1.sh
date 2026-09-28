@@ -1,4 +1,4 @@
-#!/bin/bash
+no#!/bin/bash
 # SaraSonix v0.12.5 minimal FFmpeg experiment.
 
 source "$(dirname "$BASH_SOURCE")"/windows-install-shared.sh
@@ -39,3 +39,4 @@ FF_CONFIGURE+=" --enable-encoder=h264_nvenc,h264_amf,h264_qsv,libopenh264"
 # Keep GPL/nonfree codecs out of this build.
 FF_CONFIGURE+=" --disable-libx264 --disable-libx265 --disable-nonfree"
 FF_CONFIGURE+=" --disable-avisynth"
+FF_CONFIGURE+=" --disable-liblcevc-dec"
