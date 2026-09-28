@@ -4,6 +4,7 @@ SCRIPT_REPO="https://github.com/v-novaltd/LCEVCdec.git"
 SCRIPT_COMMIT="17804ac54db8fbb42717f3275b1e73f3c0b067d3"
 
 ffbuild_enabled() {
+    [[ $VARIANT == lgpl-sarasonix* ]] && return -1
     (( $(ffbuild_ffver) >= 800 )) || return -1
     [[ $TARGET != winarm* ]] || return -1
     return 0
