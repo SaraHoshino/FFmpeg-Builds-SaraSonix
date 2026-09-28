@@ -44,3 +44,6 @@ FF_CONFIGURE+=" --disable-liblcevc-dec"
 # SaraSonix hardware encoder probe uses a generated black frame.
 FF_CONFIGURE+=" --enable-indev=lavfi"
 FF_CONFIGURE+=" --enable-filter=color"
+
+# AAC encoding needs automatic audio sample-format conversion.
+FF_CONFIGURE+=" --enable-filter=aresample"
