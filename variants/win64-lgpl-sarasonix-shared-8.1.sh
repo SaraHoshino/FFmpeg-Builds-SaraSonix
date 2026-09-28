@@ -38,6 +38,9 @@ FF_CONFIGURE+=" --enable-encoder=h264_nvenc,h264_amf,h264_qsv,libopenh264"
 
 # Keep GPL/nonfree codecs out of this build.
 FF_CONFIGURE+=" --disable-libx264 --disable-libx265 --disable-nonfree"
-
-# SaraSonix does not use AviSynth.
 FF_CONFIGURE+=" --disable-avisynth"
+FF_CONFIGURE+=" --disable-liblcevc-dec"
+
+# SaraSonix hardware encoder probe uses a generated black frame.
+FF_CONFIGURE+=" --enable-indev=lavfi"
+FF_CONFIGURE+=" --enable-filter=color"
